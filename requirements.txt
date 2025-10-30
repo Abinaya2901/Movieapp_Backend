@@ -6,3 +6,4 @@ psycopg2-binary
 requests
 werkzeug
 gunicorn
+python-dotenv
