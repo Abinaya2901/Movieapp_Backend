@@ -8,11 +8,11 @@ TMDB_API_KEY = '468c96cd6229cdf95d40b1e691395cd2'
 TMDB_BASE = 'https://api.themoviedb.org/3'
 
 industry_map = {
-    "Hollywood": "US",
-    "Bollywood": "IN",
-    "Kollywood": "IN",
-    "Tollywood": "IN",
-    "Korean": "KR",
+    "Hollywood": "en",
+    "Bollywood": "hi",
+    "Kollywood": "ta",
+    "Tollywood": "te",
+    "Korean": "ko",
     # Add more as needed
 }
 
@@ -74,7 +74,7 @@ def movies_list():
     params = {
         'api_key': TMDB_API_KEY,
         'with_genres': genre_id,
-        'region': industry_map.get(industry, 'US'),
+        'with_original_language': industry_map.get(industry, 'en'),
         'sort_by': 'vote_average.desc',
         'vote_count.gte': 50,  # filter out unpopular
         'page': 1
